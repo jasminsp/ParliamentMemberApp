@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/partyList">
+
+    <fragment
+        android:id="@+id/partyList"
+        android:name="com.jasminsp.parliamentmemberapp.partylist.PartyList"
+        android:label="fragment_party_list"
+        tools:layout="@layout/fragment_party_list" >
+        <action
+            android:id="@+id/action_partyList_to_memberList"
+            app:destination="@id/memberList" />
+    </fragment>
+    <fragment
+        android:id="@+id/memberList"
+        android:name="com.jasminsp.parliamentmemberapp.memberlist.MemberList"
+        android:label="fragment_member_list"
+        tools:layout="@layout/fragment_member_list" >
+        <action
+            android:id="@+id/action_memberList_to_memberDetails"
+            app:destination="@id/memberDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/memberDetails"
+        android:name="com.jasminsp.parliamentmemberapp.memberdetails.MemberDetails"
+        android:label="fragment_member_details"
+        tools:layout="@layout/fragment_member_details" />
+</navigation>
