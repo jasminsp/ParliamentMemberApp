@@ -7,8 +7,7 @@ import androidx.room.RoomDatabase
 import com.jasminsp.parliamentmemberapp.MyApp
 
 //Creating the database
-@Database(entities = [ParliamentData::class], version = 1, exportSchema = false)
-
+@Database(entities = [ParliamentData::class], version = 2, exportSchema = false)
 abstract class ParliamentDatabase : RoomDatabase() {
     abstract val parliamentDatabaseDao: ParliamentMemberDao
 

@@ -8,7 +8,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 
-private const val BASE_URL = "https://users.metropolia.fi/~peterh/mps.json"
+private const val BASE_URL = "https://users.metropolia.fi/~peterh/"
 
 // create an instance of Moshi
 private val moshi = Moshi.Builder()
@@ -23,7 +23,7 @@ private val retrofit = Retrofit.Builder()
 
 
 interface MemberApiService {
-    @GET("Members") // end of API
+    @GET("mps.json") // end of API
     suspend fun getMemberRecords(): List<ParliamentData>
 }
 
