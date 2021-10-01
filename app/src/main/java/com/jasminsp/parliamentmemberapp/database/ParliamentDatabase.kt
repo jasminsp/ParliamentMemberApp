@@ -7,16 +7,16 @@ import androidx.room.RoomDatabase
 import com.jasminsp.parliamentmemberapp.MyApp
 
 //Creating the database
-@Database(entities = [ParliamentData::class], version = 2, exportSchema = false)
+@Database(entities = [ParliamentData::class], version = 8, exportSchema = false)
 abstract class ParliamentDatabase : RoomDatabase() {
-    abstract val parliamentDatabaseDao: ParliamentMemberDao
+    abstract val parliamentDatabaseDao: ParliamentDatabaseDao
 
     // Ensuring only one instance is created
     companion object {
         @Volatile
         private var INSTANCE: ParliamentDatabase? = null
 
-        // Ensuring that database is only created once
+        // Ensuring that database is only created once, if null it will be created
         fun getInstance(context: Context): ParliamentDatabase {
             synchronized(this) {
                 var instance = INSTANCE

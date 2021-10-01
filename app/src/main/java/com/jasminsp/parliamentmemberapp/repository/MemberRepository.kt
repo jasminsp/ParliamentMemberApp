@@ -1,5 +1,6 @@
 package com.jasminsp.parliamentmemberapp.repository
 
+
 import androidx.lifecycle.LiveData
 import com.jasminsp.parliamentmemberapp.MyApp
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
@@ -15,6 +16,7 @@ object MemberRepository {
     // Checking any changes from API and updating the database
     suspend fun refreshData() {
         val pMembers = MemberApi.retrofitService.getMemberRecords()
-        pMembers.forEach { memberDao.insertOrUpdate(it) }
+        pMembers.forEach { memberDao.insertOrUpdate(it)}
+
     }
 }

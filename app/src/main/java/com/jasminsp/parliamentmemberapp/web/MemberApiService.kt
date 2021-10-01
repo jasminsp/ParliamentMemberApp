@@ -1,5 +1,6 @@
 package com.jasminsp.parliamentmemberapp.web
 
+import androidx.lifecycle.LiveData
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -21,11 +22,11 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-
-interface MemberApiService {
-    @GET("mps.json") // end of API
-    suspend fun getMemberRecords(): List<ParliamentData>
-}
+    // Gets the memberData from API to MemberApi service
+    interface MemberApiService {
+        @GET("mps.json") // end of API
+        suspend fun getMemberRecords(): List<ParliamentData>
+    }
 
 //Initializing the Api service
 object MemberApi {

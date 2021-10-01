@@ -1,5 +1,6 @@
 package com.jasminsp.parliamentmemberapp.partylist
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
 import com.jasminsp.parliamentmemberapp.repository.MemberRepository
@@ -10,6 +11,15 @@ import com.jasminsp.parliamentmemberapp.repository.MemberRepository
 //Initialization of a viewModel
 class PartyListViewModel: ViewModel() {
 
+    private val _parliamentParties = MutableLiveData<ParliamentData?>()
+    val parliamentParties: LiveData<ParliamentData?>
+        get() = _parliamentParties
+
+
+    init {
+        Log.i("bugging", "PartyViewModel Created")
+    }
+
     // No duplicate parties
     val memberRepository = MemberRepository
     val members = memberRepository.memberData
@@ -17,15 +27,9 @@ class PartyListViewModel: ViewModel() {
         members.value?.distinctBy { it.party }
     }
 
-    private val _parliamentParties = MutableLiveData<ParliamentData?>()
-    val parliamentParties: LiveData<ParliamentData?>
-        get() = _parliamentParties
-
 
     // Showing the party details
     fun partyDetails(parliamentData: ParliamentData) {
         _parliamentParties.value = parliamentData
     }
-
-
 }
