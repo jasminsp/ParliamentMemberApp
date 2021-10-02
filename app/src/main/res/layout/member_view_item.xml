@@ -13,13 +13,13 @@
             android:id="@+id/txt_member"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/img_star"
+            android:contentDescription="@string/txt_member"
             android:padding="15dp"
             android:text="@string/member_name"
             android:textColor="#37474F"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/img_star"

@@ -5,17 +5,17 @@
 <item
     android:id="@+id/nav_home"
     android:icon="@drawable/ic_parties"
-    android:title="Home" />
+    android:title="Parties" />
 
 <item
     android:id="@+id/nav_like"
     android:icon="@drawable/ic_members"
-    android:title="Like" />
+    android:title="Members" />
 
 <item
     android:id="@+id/nav_shop"
     android:icon="@drawable/ic_search"
-    android:title="Shop" />
+    android:title="Search" />
 
 
 </menu>

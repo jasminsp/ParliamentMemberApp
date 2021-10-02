@@ -11,6 +11,5 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/party_grid_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#EFF3C7"/>
+        android:layout_height="match_parent"/>
 </layout>
