@@ -7,16 +7,15 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jasminsp.parliamentmemberapp.R
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
-import com.jasminsp.parliamentmemberapp.databinding.PartyViewBinding
+import com.jasminsp.parliamentmemberapp.databinding.PartyViewItemBinding
 
 
 class PartyListAdapter(private val whileClicked: OnClickListener) :
     ListAdapter<ParliamentData, PartyListAdapter.PartyViewHolder>(PartyDiffCallback) {
 
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PartyViewHolder {
-        val binding = PartyViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = PartyViewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PartyViewHolder(binding)
     }
 
@@ -38,18 +37,19 @@ class PartyListAdapter(private val whileClicked: OnClickListener) :
                 else -> R.drawable.ic_liike
             })
 
+        // Making logos clickable
         holder.itemView.setOnClickListener {
             whileClicked.onClick(partyData)
         }
     }
 
     // Binding PartyList fragment to the layout
-    class PartyViewHolder(val binding: PartyViewBinding) :
+    class PartyViewHolder(val binding: PartyViewItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    // ListAdapter methods extending a DiffUtil callback
-    // for calculating the difference between two non-null items in a list
-    // returns true is areItemsTheSame object reference is the same
+    // ListAdapter methods extending a DiffUtil callback.
+    // Calculates the difference between two non-null items in a list
+    // returns true if areItemsTheSame object reference is the same
     companion object PartyDiffCallback : DiffUtil.ItemCallback<ParliamentData>() {
         override fun areItemsTheSame(oldItem: ParliamentData, newItem: ParliamentData): Boolean {
             return oldItem == newItem

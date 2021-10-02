@@ -9,9 +9,9 @@
         android:id="@+id/partyList"
         android:name="com.jasminsp.parliamentmemberapp.partylist.PartyList"
         android:label="fragment_party_list"
-        tools:layout="@layout/fragment_party_list" >
+        tools:layout="@layout/fragment_party_list">
         <action
-            android:id="@+id/action_partyList_to_memberList"
+            android:id="@+id/action_show_memberList"
             app:destination="@id/memberList" />
     </fragment>
     <fragment
@@ -19,6 +19,10 @@
         android:name="com.jasminsp.parliamentmemberapp.memberlist.MemberList"
         android:label="fragment_member_list"
         tools:layout="@layout/fragment_member_list" >
+        <argument
+            android:name="selectedParty"
+            app:argType="com.jasminsp.parliamentmemberapp.database.ParliamentData"
+            />
         <action
             android:id="@+id/action_memberList_to_memberDetails"
             app:destination="@id/memberDetails" />
@@ -28,4 +32,9 @@
         android:name="com.jasminsp.parliamentmemberapp.memberdetails.MemberDetails"
         android:label="fragment_member_details"
         tools:layout="@layout/fragment_member_details" />
+
+    <argument
+        android:name="selectedMember"
+        app:argType="com.jasminsp.parliamentmemberapp.database.ParliamentData"
+        />
 </navigation>

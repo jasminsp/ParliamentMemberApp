@@ -7,11 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.jasminsp.parliamentmemberapp.MyApp
 import com.jasminsp.parliamentmemberapp.R
 import com.jasminsp.parliamentmemberapp.databinding.FragmentPartyListBinding
+import com.jasminsp.parliamentmemberapp.memberlist.MemberList
+import com.jasminsp.parliamentmemberapp.memberlist.MemberListDirections
 
 
 class PartyList : Fragment() {
@@ -20,15 +24,18 @@ class PartyList : Fragment() {
     private lateinit var binding: FragmentPartyListBinding
     private lateinit var partyAdapter: PartyListAdapter
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        
+
         // Initializing the variables
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_party_list, container, false)
-        Log.i("bugging", "Called the viewModelProvider")
         viewModel = ViewModelProvider(this).get(PartyListViewModel::class.java)
+
+
+        // Triggering the LiveData in the view model for the navigation
         partyAdapter = PartyListAdapter(PartyListAdapter.OnClickListener {
             viewModel.partyDetails(it)
         })
@@ -39,8 +46,14 @@ class PartyList : Fragment() {
         viewModel.parties.observe(viewLifecycleOwner, {
             partyAdapter.submitList(it)
         })
-        
 
+        viewModel.navigateToSelectedItem.observe(viewLifecycleOwner, {
+            if ( null != it ) {
+                this.findNavController().navigate(
+                    PartyListDirections.actionShowMemberList(it))
+                viewModel.displayPropertyDetailsComplete()
+        }
+        })
 
         return binding.root
     }

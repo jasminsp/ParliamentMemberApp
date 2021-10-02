@@ -2,8 +2,15 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.jasminsp.parliamentmemberapp.partylist.PartyListViewModel" />
+    </data>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/party_grid_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="#EFF3C7"/>
 </layout>

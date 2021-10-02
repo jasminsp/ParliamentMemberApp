@@ -6,7 +6,9 @@ import androidx.room.*
 import kotlinx.parcelize.Parcelize
 
 
-//Defining the datatable to be stored
+// Defining the datatable to be stored
+// It will be parcelable so data can be divided in fragment navigation
+@Parcelize
 @Entity(tableName = "member_database")
 data class ParliamentData(
     @PrimaryKey(autoGenerate = false)
@@ -20,7 +22,7 @@ data class ParliamentData(
     val twitter: String,
     val bornYear: Int,
     val constituency: String
-)
+) : Parcelable
 
 
 //Defining functions that can be used with the database
