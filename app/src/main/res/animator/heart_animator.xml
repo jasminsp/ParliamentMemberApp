@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<animator xmlns:android="http://schemas.android.com/apk/res/android">
     <objectAnimator
         android:duration="@android:integer/config_shortAnimTime"
         android:propertyName="scaleX"
@@ -20,4 +20,4 @@
         android:startOffset="@android:integer/config_shortAnimTime"
         android:valueTo="0dp"
         android:valueType="floatType" />
-</selector>
+</animator>

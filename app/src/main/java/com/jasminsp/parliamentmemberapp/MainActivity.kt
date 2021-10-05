@@ -2,7 +2,6 @@ package com.jasminsp.parliamentmemberapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.findNavController
 
 
 class MainActivity : AppCompatActivity() {

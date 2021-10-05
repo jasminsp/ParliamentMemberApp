@@ -24,17 +24,17 @@
             app:argType="com.jasminsp.parliamentmemberapp.database.ParliamentData"
             />
         <action
-            android:id="@+id/action_memberList_to_memberDetails"
+            android:id="@+id/action_show_memberDetails"
             app:destination="@id/memberDetails" />
     </fragment>
     <fragment
         android:id="@+id/memberDetails"
         android:name="com.jasminsp.parliamentmemberapp.memberdetails.MemberDetails"
         android:label="fragment_member_details"
-        tools:layout="@layout/fragment_member_details" />
-
+        tools:layout="@layout/fragment_member_details">
     <argument
         android:name="selectedMember"
         app:argType="com.jasminsp.parliamentmemberapp.database.ParliamentData"
         />
+    </fragment>
 </navigation>

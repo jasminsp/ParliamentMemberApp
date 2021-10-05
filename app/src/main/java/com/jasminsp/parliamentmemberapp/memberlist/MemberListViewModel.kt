@@ -6,11 +6,11 @@ import androidx.lifecycle.*
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
 import com.jasminsp.parliamentmemberapp.repository.MemberRepository
 
-class MemberListViewModel(parliamentData: ParliamentData, application: Application): ViewModel() {
+class MemberListViewModel(parliamentData: ParliamentData, application: Application): AndroidViewModel(application) {
     // Creates navigation
-    private val _navigateToSelectedItem = MutableLiveData<ParliamentData?>()
-    val navigateToSelectedItem: LiveData<ParliamentData?>
-        get() = _navigateToSelectedItem
+    private val _navigateToSelectedMember = MutableLiveData<ParliamentData?>()
+    val navigateToSelectedMember: LiveData<ParliamentData?>
+        get() = _navigateToSelectedMember
 
 
     init {
@@ -26,12 +26,12 @@ class MemberListViewModel(parliamentData: ParliamentData, application: Applicati
 
     // Showing the member details
     fun memberDetails(parliamentData: ParliamentData) {
-        _navigateToSelectedItem.value = parliamentData
+        _navigateToSelectedMember.value = parliamentData
     }
 
     // Nulling the value of _navigateToSelectedItem to avoid navigation being triggered again
     // when user returns from detail view. Marks the navigation state to complete.
     fun displayPropertyDetailsComplete() {
-        _navigateToSelectedItem.value = null
+        _navigateToSelectedMember.value = null
     }
 }

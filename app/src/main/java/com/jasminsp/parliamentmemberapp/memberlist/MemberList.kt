@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jasminsp.parliamentmemberapp.MyApp
 import com.jasminsp.parliamentmemberapp.R
@@ -21,7 +22,7 @@ class MemberList : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val application = requireNotNull(activity).application
         val parliamentData = MemberListArgs.fromBundle(requireArguments()).selectedParty
         val viewModelFactory = MemberListViewModelFactory(parliamentData, application)
@@ -40,6 +41,15 @@ class MemberList : Fragment() {
 
         viewModel.member.observe(viewLifecycleOwner, {
             memberAdapter.submitList(it)
+        })
+
+
+        viewModel.navigateToSelectedMember.observe(viewLifecycleOwner, {
+            if (null != it) {
+                this.findNavController().navigate(
+                    MemberListDirections.actionShowMemberDetails(it))
+                viewModel.displayPropertyDetailsComplete()
+            }
         })
 
 

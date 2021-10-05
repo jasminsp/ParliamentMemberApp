@@ -1,6 +1,6 @@
 package com.jasminsp.parliamentmemberapp.web
 
-import androidx.lifecycle.LiveData
+
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

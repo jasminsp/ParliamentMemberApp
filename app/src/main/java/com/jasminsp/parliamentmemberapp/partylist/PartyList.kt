@@ -1,21 +1,17 @@
 package com.jasminsp.parliamentmemberapp.partylist
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.jasminsp.parliamentmemberapp.MyApp
 import com.jasminsp.parliamentmemberapp.R
 import com.jasminsp.parliamentmemberapp.databinding.FragmentPartyListBinding
-import com.jasminsp.parliamentmemberapp.memberlist.MemberList
-import com.jasminsp.parliamentmemberapp.memberlist.MemberListDirections
 
 
 class PartyList : Fragment() {
@@ -28,7 +24,7 @@ class PartyList : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         // Initializing the variables
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_party_list, container, false)

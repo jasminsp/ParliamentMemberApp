@@ -1,12 +1,10 @@
 package com.jasminsp.parliamentmemberapp.partylist
 
-import android.app.Application
+
 import android.util.Log
 import androidx.lifecycle.*
-import com.bumptech.glide.Glide.init
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
 import com.jasminsp.parliamentmemberapp.repository.MemberRepository
-import kotlinx.coroutines.launch
 
 
 // TODO possibly add some error handling here for recyclerview. Use android kotlin fundamentals: Loading and displaying images

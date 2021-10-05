@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 
+// Transforming the URL to Uri with Glide so that images can be shown on the app
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
     imgUrl?.let {
@@ -14,8 +15,7 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
         Glide.with(imgView.context)
             .load(imgUri)
             .apply(
-                RequestOptions()
-            )
+                RequestOptions())
             .into(imgView)
     }
 }
