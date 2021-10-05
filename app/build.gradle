@@ -99,7 +99,7 @@ dependencies {
     implementation "androidx.multidex:multidex:$multidex_version"
 
     // Design
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 
 
     // WorkManager dependency

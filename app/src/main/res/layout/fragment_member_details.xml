@@ -34,32 +34,28 @@
 
         <TextView
             android:id="@+id/txt_member"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/member"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline2"
-            app:layout_constraintVertical_bias="0.073" />
+            app:layout_constraintVertical_bias="0.067" />
 
         <CheckBox
             android:id="@+id/checkbox_heart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:background="@drawable/ic_heart_enabled_foreground"
-            android:button="@null"
-            android:stateListAnimator="@animator/heart_animator"
-            android:checked="false"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="211dp"
+            android:button="@drawable/button_checked_state"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_member"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/img_member"
+            app:layout_constraintTop_toTopOf="@+id/img_member"
+            app:useMaterialThemeColors="false" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -67,5 +63,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="400dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
