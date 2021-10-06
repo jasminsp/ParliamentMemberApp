@@ -30,7 +30,7 @@ class MemberList : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_member_list, container, false)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MemberListViewModel::class.java)
-        memberAdapter = MemberListAdapter(MemberListAdapter.OnClickListener {
+        memberAdapter = MemberListAdapter(this, MemberListAdapter.OnClickListener {
             viewModel.memberDetails(it)
         })
 
@@ -44,15 +44,15 @@ class MemberList : Fragment() {
         })
 
 
+
         viewModel.navigateToSelectedMember.observe(viewLifecycleOwner, {
             if (null != it) {
                 this.findNavController().navigate(
-                    MemberListDirections.actionShowMemberDetails(it))
+                    MemberListDirections.actionShowMemberDetails(it)
+                )
                 viewModel.displayPropertyDetailsComplete()
             }
         })
-
-
 
         return binding.root
     }

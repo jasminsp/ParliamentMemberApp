@@ -12,7 +12,7 @@ import kotlinx.parcelize.Parcelize
 data class VoteData(
     @PrimaryKey(autoGenerate = false)
     val personNumber: Int,
-    val voteValue: Int = 0
+    val voteValue: Int
 ) : Parcelable
 
 

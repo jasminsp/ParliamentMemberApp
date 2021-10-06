@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.jasminsp.parliamentmemberapp.R
 import com.jasminsp.parliamentmemberapp.bindImage
+import com.jasminsp.parliamentmemberapp.database.VoteData
 import com.jasminsp.parliamentmemberapp.databinding.FragmentMemberDetailsBinding
 
 
@@ -22,17 +23,39 @@ class MemberDetails : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         val application = requireNotNull(activity).application
         val parliamentData = MemberDetailsArgs.fromBundle(requireArguments()).selectedMember
         val viewModelFactory = MemberDetailsViewModelFactory(parliamentData, application)
 
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_member_details, container, false)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MemberDetailsViewModel::class.java)
+
 
         bindImage(binding.imgMember, "https://avoindata.eduskunta.fi/${viewModel.member?.picture}")
         binding.txtMember.text = viewModel.fullName
 
+        binding.checkboxHeart.isChecked = viewModel.buttonCheckedState()
+        binding.checkboxHeart.setOnClickListener {
+            if (binding.checkboxHeart.isChecked) viewModel.voteValues = 1 else viewModel.voteValues = 0
+            sendVotesToDatabase()
+        }
+
+        viewModel.memberVote.observe(viewLifecycleOwner, {
+            binding.checkboxHeart.isChecked
+        })
+
+
         return binding.root
+    }
+
+
+    // Sending votes to the database
+    private fun sendVotesToDatabase() {
+        val personNumber = viewModel.member?.personNumber ?: 0
+        val vote = viewModel.voteValues
+
+        val voteEntry = VoteData(personNumber, vote)
+        viewModel.memberLiked(voteEntry)
     }
 }

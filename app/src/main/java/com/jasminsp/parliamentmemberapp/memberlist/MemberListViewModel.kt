@@ -1,21 +1,18 @@
 package com.jasminsp.parliamentmemberapp.memberlist
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.*
+import com.jasminsp.parliamentmemberapp.R
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
 import com.jasminsp.parliamentmemberapp.repository.MemberRepository
 
-class MemberListViewModel(parliamentData: ParliamentData, application: Application): AndroidViewModel(application) {
+class MemberListViewModel(parliamentData: ParliamentData, application: Application) :
+    AndroidViewModel(application) {
     // Creates navigation
     private val _navigateToSelectedMember = MutableLiveData<ParliamentData?>()
     val navigateToSelectedMember: LiveData<ParliamentData?>
         get() = _navigateToSelectedMember
 
-
-    init {
-        Log.i("bugging", "MemberListViewModel Created")
-    }
 
     // Getting members from repository and filtering to distinct members
     private val members = MemberRepository.memberData
@@ -34,4 +31,5 @@ class MemberListViewModel(parliamentData: ParliamentData, application: Applicati
     fun displayPropertyDetailsComplete() {
         _navigateToSelectedMember.value = null
     }
+
 }
