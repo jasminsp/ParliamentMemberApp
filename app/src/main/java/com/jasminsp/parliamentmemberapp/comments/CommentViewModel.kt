@@ -20,11 +20,4 @@ class CommentViewModel(parliamentData: ParliamentData, application: Application)
     val comment = Transformations.map(comments) {
         comments.value?.filter { it.personNumber == parliamentData.personNumber }
     }
-
-    // Transferring comment data to the database
-    fun updateComments(comment: CommentData) {
-        viewModelScope.launch(Dispatchers.IO) {
-            commentRepository.addComment(comment)
-        }
-    }
 }

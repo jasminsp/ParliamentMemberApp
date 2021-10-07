@@ -2,17 +2,17 @@ package com.jasminsp.parliamentmemberapp.comments
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.lifecycle.LifecycleOwner
+import androidx.annotation.NonNull
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jasminsp.parliamentmemberapp.database.CommentData
-import com.jasminsp.parliamentmemberapp.databinding.FragmentCommentListBinding
+import com.jasminsp.parliamentmemberapp.databinding.CommentViewItemBinding
 import com.jasminsp.parliamentmemberapp.repository.CommentRepository
 
 
 
-class CommentListAdapter(private val whileClicked: OnClickListener) :
+class CommentListAdapter :
     ListAdapter<CommentData, CommentListAdapter.CommentListViewHolder>(CommentDiffCallback) {
 
     // Getting comments from the database
@@ -21,8 +21,7 @@ class CommentListAdapter(private val whileClicked: OnClickListener) :
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentListViewHolder {
-        val binding =
-            FragmentCommentListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = CommentViewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CommentListViewHolder(binding)
     }
 
@@ -30,15 +29,13 @@ class CommentListAdapter(private val whileClicked: OnClickListener) :
     override fun onBindViewHolder(holder: CommentListViewHolder, position: Int) {
         val commentData = getItem(position)
 
-
-
-        holder.itemView.setOnClickListener {
-            whileClicked.onClick(commentData)
-        }
+        holder.binding.txtCommentDate.text = commentData.date
+        holder.binding.txtUserComment.text = commentData.comment
     }
 
+
     // Binding CommentList fragment to the layout
-    class CommentListViewHolder(val binding: FragmentCommentListBinding) :
+    class CommentListViewHolder(val binding: CommentViewItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
 
@@ -53,9 +50,5 @@ class CommentListAdapter(private val whileClicked: OnClickListener) :
         override fun areContentsTheSame(oldItem: CommentData, newItem: CommentData): Boolean {
             return oldItem.personNumber == newItem.personNumber
         }
-    }
-
-    class OnClickListener(val clickListener: (commentData: CommentData) -> Unit) {
-        fun onClick(commentData: CommentData) = clickListener(commentData)
     }
 }

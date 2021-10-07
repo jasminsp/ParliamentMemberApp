@@ -36,5 +36,18 @@
         android:name="selectedMember"
         app:argType="com.jasminsp.parliamentmemberapp.database.ParliamentData"
         />
+        <action
+            android:id="@+id/toCommentList"
+            app:destination="@id/commentList" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentList"
+        android:name="com.jasminsp.parliamentmemberapp.comments.CommentList"
+        android:label="CommentList"
+        tools:layout="@layout/fragment_comment_list">
+    <argument
+        android:name="savedComments"
+        app:argType="com.jasminsp.parliamentmemberapp.database.ParliamentData"
+        />
     </fragment>
 </navigation>

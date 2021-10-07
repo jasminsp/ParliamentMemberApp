@@ -15,4 +15,6 @@
     <string name="save">Save</string>
     <string name="comments">Comments</string>
     <string name="write_a_comment">Write a comment</string>
+    <string name="comment_icon">comment_icon</string>
+    <string name="date">Date</string>
 </resources>

@@ -37,6 +37,7 @@ class MemberListAdapter(
         // Using PartyViewHolder to set a right name for specific party
         holder.binding.txtMember.text = fullName
 
+
         // Observing the checkbox click state and weather there is a like
         votes.observe(lifeCycle, {
             var buttonState = R.drawable.ic_heart_foreground
@@ -51,7 +52,6 @@ class MemberListAdapter(
             whileClicked.onClick(memberData)
         }
     }
-
 
     // Binding PartyList fragment to the layout
     class MemberListViewHolder(val binding: MemberViewItemBinding) :
