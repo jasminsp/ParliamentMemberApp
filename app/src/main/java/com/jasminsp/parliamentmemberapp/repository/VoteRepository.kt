@@ -13,6 +13,5 @@ object VoteRepository {
 
     suspend fun addVote(voteData: VoteData) {
         voteDao.insertOrUpdate(voteData)
-
     }
 }
