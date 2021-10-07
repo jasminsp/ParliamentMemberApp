@@ -26,11 +26,18 @@
         <entry key="..\:/Users/Jasmin/AndroidStudioProjects/ParliamentMemberApp/app/src/main/res/mipmap-anydpi-v26/ic_r.xml" value="0.4203125" />
         <entry key="..\:/Users/Jasmin/AndroidStudioProjects/ParliamentMemberApp/app/src/main/res/mipmap-xxhdpi/ic_keskusta.xml" value="3.2" />
         <entry key="app/src/main/res/drawable/button_checked_state.xml" value="0.24814814814814815" />
+        <entry key="app/src/main/res/drawable/button_checked_state_small.xml" value="0.2351851851851852" />
         <entry key="app/src/main/res/drawable/heart_button_animator.xml" value="0.24814814814814815" />
+        <entry key="app/src/main/res/drawable/ic_back_background.xml" value="0.2351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_back_foreground.xml" value="0.2351851851851852" />
         <entry key="app/src/main/res/drawable/ic_heart_background.xml" value="0.24814814814814815" />
         <entry key="app/src/main/res/drawable/ic_heart_enabled_foreground.xml" value="0.24814814814814815" />
+        <entry key="app/src/main/res/drawable/ic_heart_enabled_foreground_small.xml" value="0.2351851851851852" />
         <entry key="app/src/main/res/drawable/ic_heart_foreground.xml" value="0.24814814814814815" />
         <entry key="app/src/main/res/drawable/ic_heart_pressed_foreground.xml" value="0.24814814814814815" />
+        <entry key="app/src/main/res/drawable/ic_heart_pressed_foreground_small.xml" value="0.2351851851851852" />
+        <entry key="app/src/main/res/drawable/item_selector.xml" value="0.2351851851851852" />
+        <entry key="app/src/main/res/drawable/round_corners.xml" value="0.2351851851851852" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_member_details.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_member_list.xml" value="0.23282051282051283" />
@@ -38,6 +45,8 @@
         <entry key="app/src/main/res/layout/member_view_item.xml" value="0.335" />
         <entry key="app/src/main/res/layout/party_view.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/party_view_item.xml" value="0.21944444444444444" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_back.xml" value="0.2351851851851852" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_heart.xml" value="0.24814814814814815" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_heart_pressed.xml" value="0.24814814814814815" />
       </map>

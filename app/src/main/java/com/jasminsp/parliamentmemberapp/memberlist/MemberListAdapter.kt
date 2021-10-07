@@ -6,6 +6,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.jasminsp.parliamentmemberapp.R
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
 import com.jasminsp.parliamentmemberapp.databinding.MemberViewItemBinding
 import com.jasminsp.parliamentmemberapp.repository.VoteRepository
@@ -33,29 +34,24 @@ class MemberListAdapter(
         val fullName = memberData.first + " " + memberData.last
         val likeValue = votes.value?.find { it.personNumber == memberData.personNumber }?.voteValue
 
-        // Converting the likeValue from 1 and 0 to true and false
-        fun buttonCheckedState(): Boolean {
-            var buttonState = false
-            when (likeValue) {
-                1 -> buttonState = true
-                0 -> buttonState = false
-                else -> println("Error with button state")
-            }
-            return buttonState
-        }
-
         // Using PartyViewHolder to set a right name for specific party
         holder.binding.txtMember.text = fullName
 
         // Observing the checkbox click state and weather there is a like
         votes.observe(lifeCycle, {
-            holder.binding.checkbox.isChecked = buttonCheckedState()
+            var buttonState = R.drawable.ic_heart_foreground
+            when (likeValue) {
+                1 -> buttonState = R.drawable.ic_heart_pressed_foreground_small
+                0 -> buttonState = R.drawable.ic_heart_enabled_foreground_small
+            }
+            holder.binding.imgLikeValue.setImageResource(buttonState)
         })
 
         holder.itemView.setOnClickListener {
             whileClicked.onClick(memberData)
         }
     }
+
 
     // Binding PartyList fragment to the layout
     class MemberListViewHolder(val binding: MemberViewItemBinding) :

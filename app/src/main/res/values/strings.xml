@@ -8,5 +8,7 @@
     <string name="member_name">Member name</string>
     <string name="img_star">img_star</string>
     <string name="txt_member">txt_member</string>
+    <string name="back">Back</string>
     <string name="parties">Parties</string>
+    <string name="members">Members</string>
 </resources>
