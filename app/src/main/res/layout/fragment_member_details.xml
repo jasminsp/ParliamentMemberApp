@@ -49,7 +49,6 @@
             android:layout_height="66dp"
             android:layout_marginTop="4dp"
             android:button="@drawable/button_checked_state"
-            android:onClick="onHeartClicked"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
