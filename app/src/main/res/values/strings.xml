@@ -11,4 +11,8 @@
     <string name="back">Back</string>
     <string name="parties">Parties</string>
     <string name="members">Members</string>
+    <string name="comment">comment</string>
+    <string name="save">Save</string>
+    <string name="comments">Comments</string>
+    <string name="write_a_comment">Write a comment</string>
 </resources>

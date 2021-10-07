@@ -12,7 +12,7 @@ object CommentRepository {
     val commentData: LiveData<List<CommentData>> = commentDao.getAllComments()
 
     // Saving comments in the comment database
-    suspend fun addVote(commentData: CommentData) {
+    suspend fun addComment(commentData: CommentData) {
         commentDao.insertOrUpdate(commentData)
 
     }
