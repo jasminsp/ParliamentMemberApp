@@ -11,6 +11,11 @@ import com.jasminsp.parliamentmemberapp.database.ParliamentData
 import com.jasminsp.parliamentmemberapp.databinding.MemberViewItemBinding
 import com.jasminsp.parliamentmemberapp.repository.VoteRepository
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: Adapter for the MemberList fragment recyclerView
+
 class MemberListAdapter(
     private val lifeCycle: LifecycleOwner,
     private val whileClicked: OnClickListener

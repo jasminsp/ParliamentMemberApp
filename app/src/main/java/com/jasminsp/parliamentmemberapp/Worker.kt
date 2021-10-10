@@ -6,6 +6,11 @@ import androidx.work.WorkerParameters
 import com.jasminsp.parliamentmemberapp.repository.MemberRepository
 import retrofit2.HttpException
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: Implementation for CoroutineWorker
+
 class DataWorker(appContext: Context, params: WorkerParameters) :
     CoroutineWorker(appContext, params) {
 

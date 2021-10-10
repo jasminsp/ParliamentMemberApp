@@ -11,9 +11,12 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jasminsp.parliamentmemberapp.MyApp
 import com.jasminsp.parliamentmemberapp.R
-import com.jasminsp.parliamentmemberapp.databinding.CommentViewItemBinding
 import com.jasminsp.parliamentmemberapp.databinding.FragmentCommentListBinding
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: UI functionality of the CommentList fragment
 
 class CommentList : Fragment() {
 

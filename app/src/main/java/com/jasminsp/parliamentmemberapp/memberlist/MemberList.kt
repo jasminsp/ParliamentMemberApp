@@ -14,6 +14,11 @@ import com.jasminsp.parliamentmemberapp.MyApp
 import com.jasminsp.parliamentmemberapp.R
 import com.jasminsp.parliamentmemberapp.databinding.FragmentMemberListBinding
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: UI functionality for MemberList fragment
+
 class MemberList : Fragment() {
 
     private lateinit var viewModel: MemberListViewModel

@@ -6,6 +6,10 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: Glide implementation for easier Image presentation
 
 // Uses the Glide library to load an image by URL into an ImageView
 @BindingAdapter("imageUrl")

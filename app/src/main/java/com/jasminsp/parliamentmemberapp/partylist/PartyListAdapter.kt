@@ -10,8 +10,10 @@ import com.jasminsp.parliamentmemberapp.database.ParliamentData
 import com.jasminsp.parliamentmemberapp.databinding.PartyViewItemBinding
 
 
-// TODO add colour when certain logo is clicked to represent that click was true.
-// use https://developer.android.com/guide/topics/ui/layout/recyclerview-custom
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: Adapter for the PartyList fragment recyclerView
 
 class PartyListAdapter(private val whileClicked: OnClickListener) :
     ListAdapter<ParliamentData, PartyListAdapter.PartyViewHolder>(PartyDiffCallback) {

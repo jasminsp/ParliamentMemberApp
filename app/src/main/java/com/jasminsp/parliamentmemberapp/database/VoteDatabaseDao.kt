@@ -5,6 +5,11 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.parcelize.Parcelize
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: VoteData entity and Dao
+
 // Defining the datatable to be stored
 // It will be parcelable so data can be divided in fragment navigation
 @Parcelize

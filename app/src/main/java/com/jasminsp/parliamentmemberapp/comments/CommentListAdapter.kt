@@ -2,7 +2,6 @@ package com.jasminsp.parliamentmemberapp.comments
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.annotation.NonNull
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +9,10 @@ import com.jasminsp.parliamentmemberapp.database.CommentData
 import com.jasminsp.parliamentmemberapp.databinding.CommentViewItemBinding
 import com.jasminsp.parliamentmemberapp.repository.CommentRepository
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: Adapter for the CommentList fragment recyclerView
 
 class CommentListAdapter :
     ListAdapter<CommentData, CommentListAdapter.CommentListViewHolder>(CommentDiffCallback) {

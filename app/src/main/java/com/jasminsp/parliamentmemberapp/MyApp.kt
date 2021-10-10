@@ -9,7 +9,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
-// Contexts for the application
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: Contexts for the application
+
 class MyApp : Application() {
     private val appScope = CoroutineScope(Dispatchers.Default)
     companion object {

@@ -1,11 +1,15 @@
 package com.jasminsp.parliamentmemberapp.partylist
 
 
-import android.util.Log
 import androidx.lifecycle.*
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
 import com.jasminsp.parliamentmemberapp.repository.MemberRepository
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: ViewModel for communication between PartyList fragment and memberRepository, also
+// defining fragment logic
 
 //Initialization of a viewModel
 class PartyListViewModel : ViewModel() {

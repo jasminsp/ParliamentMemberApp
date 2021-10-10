@@ -4,7 +4,11 @@ import androidx.lifecycle.LiveData
 import com.jasminsp.parliamentmemberapp.MyApp
 import com.jasminsp.parliamentmemberapp.database.VoteData
 import com.jasminsp.parliamentmemberapp.database.VoteDatabase
-import com.jasminsp.parliamentmemberapp.database.VoteDatabaseDao
+
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: Communication between viewModels and VoteDatabase
 
 object VoteRepository {
     // Getting voteData from the database

@@ -8,6 +8,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: Fetching parliament information from API
 
 // Start of API
 private const val BASE_URL = "https://users.metropolia.fi/~peterh/"

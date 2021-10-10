@@ -5,6 +5,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: Error detection for creating anonymous objects
+
 class MemberListViewModelFactory(
     private val parliamentData: ParliamentData,
     private val application: Application) : ViewModelProvider.Factory {

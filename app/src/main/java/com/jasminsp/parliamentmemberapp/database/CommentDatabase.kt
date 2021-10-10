@@ -6,6 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.jasminsp.parliamentmemberapp.MyApp
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: CommentDatabase
+
 //Creating the database
 @Database(entities = [CommentData::class], version = 1, exportSchema = false)
 abstract class CommentDatabase : RoomDatabase() {

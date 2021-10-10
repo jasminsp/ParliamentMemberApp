@@ -11,12 +11,15 @@ import com.jasminsp.parliamentmemberapp.repository.CommentRepository
 import com.jasminsp.parliamentmemberapp.repository.MemberRepository
 import kotlinx.coroutines.launch
 import com.jasminsp.parliamentmemberapp.repository.VoteRepository
-import kotlinx.coroutines.Dispatchers
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: ViewModel for communication between MemberDetails fragment and member/voteRepository and
+// defining fragment logic
 
 class MemberDetailsViewModel(parliamentData: ParliamentData, application: Application) :
     AndroidViewModel(application) {
@@ -49,7 +52,7 @@ class MemberDetailsViewModel(parliamentData: ParliamentData, application: Applic
     }
 
 
-    // Concerting the button state from database 1 and 0 to true or false
+    // Converting the button state from database 1 and 0 to true or false
     fun heartCheckedState(): Boolean {
         when (likeValue) {
             1 -> buttonState = true

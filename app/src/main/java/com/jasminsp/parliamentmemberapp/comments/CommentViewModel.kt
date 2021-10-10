@@ -3,13 +3,13 @@ package com.jasminsp.parliamentmemberapp.comments
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.Transformations
-import androidx.lifecycle.viewModelScope
-import com.jasminsp.parliamentmemberapp.database.CommentData
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
-import com.jasminsp.parliamentmemberapp.database.VoteData
 import com.jasminsp.parliamentmemberapp.repository.CommentRepository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: ViewModel for communication between CommentList fragment and CommentRepository
 
 class CommentViewModel(parliamentData: ParliamentData, application: Application) :
     AndroidViewModel(application) {

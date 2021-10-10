@@ -2,9 +2,14 @@ package com.jasminsp.parliamentmemberapp.memberlist
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.jasminsp.parliamentmemberapp.R
 import com.jasminsp.parliamentmemberapp.database.ParliamentData
 import com.jasminsp.parliamentmemberapp.repository.MemberRepository
+
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: ViewModel for communication between MemberList fragment and memberRepository, also
+// defining fragment logic
 
 class MemberListViewModel(parliamentData: ParliamentData, application: Application) :
     AndroidViewModel(application) {
@@ -32,5 +37,4 @@ class MemberListViewModel(parliamentData: ParliamentData, application: Applicati
     fun displayPropertyDetailsComplete() {
         _navigateToSelectedMember.value = null
     }
-
 }

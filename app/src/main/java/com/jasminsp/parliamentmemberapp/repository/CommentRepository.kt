@@ -5,6 +5,10 @@ import com.jasminsp.parliamentmemberapp.MyApp
 import com.jasminsp.parliamentmemberapp.database.CommentData
 import com.jasminsp.parliamentmemberapp.database.CommentDatabase
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: Communication between viewModels and CommentDatabase
 
 object CommentRepository {
     // Getting comments from the comment database

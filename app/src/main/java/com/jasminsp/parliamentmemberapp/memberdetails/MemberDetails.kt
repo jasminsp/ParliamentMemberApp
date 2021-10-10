@@ -16,6 +16,10 @@ import com.jasminsp.parliamentmemberapp.database.CommentData
 import com.jasminsp.parliamentmemberapp.database.VoteData
 import com.jasminsp.parliamentmemberapp.databinding.FragmentMemberDetailsBinding
 
+// Student: Jasmin Partanen
+// Student ID: 2012207
+// Date: 10.10.2021
+// Class Description: UI functionality for MemberDetails fragment
 
 class MemberDetails : Fragment() {
 
