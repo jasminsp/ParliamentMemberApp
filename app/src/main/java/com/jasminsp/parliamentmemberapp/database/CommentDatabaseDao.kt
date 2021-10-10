@@ -15,7 +15,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @Entity(tableName = "comment_database")
 data class CommentData(
-    @PrimaryKey()
+    @PrimaryKey
     val date: String,
     val personNumber: Int,
     val comment: String

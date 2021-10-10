@@ -24,14 +24,12 @@ class MemberListAdapter(
 
     // Getting voteValues from the database
     private val voteRepository = VoteRepository
-    val votes = voteRepository.voteData
-
+    private val votes = voteRepository.voteData
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemberListViewHolder {
         val binding = MemberViewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MemberListViewHolder(binding)
     }
-
 
     override fun onBindViewHolder(holder: MemberListViewHolder, position: Int) {
         val memberData = getItem(position)
@@ -40,7 +38,6 @@ class MemberListAdapter(
 
         // Using PartyViewHolder to set a right name for specific party
         holder.binding.txtMember.text = fullName
-
 
         // Observing the checkbox click state and weather there is a like
         votes.observe(lifeCycle, {
@@ -60,7 +57,6 @@ class MemberListAdapter(
     // Binding PartyList fragment to the layout
     class MemberListViewHolder(val binding: MemberViewItemBinding) :
         RecyclerView.ViewHolder(binding.root)
-
 
     // ListAdapter methods extending a DiffUtil callback
     // for calculating the difference between two non-null items in a list

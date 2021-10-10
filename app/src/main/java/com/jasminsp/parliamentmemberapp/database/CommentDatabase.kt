@@ -12,7 +12,7 @@ import com.jasminsp.parliamentmemberapp.MyApp
 // Class Description: CommentDatabase
 
 //Creating the database
-@Database(entities = [CommentData::class], version = 1, exportSchema = false)
+@Database(entities = [CommentData::class], version = 2, exportSchema = false)
 abstract class CommentDatabase : RoomDatabase() {
     abstract val commentDatabaseDao: CommentDatabaseDao
 

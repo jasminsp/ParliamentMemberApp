@@ -13,18 +13,17 @@ import com.jasminsp.parliamentmemberapp.repository.MemberRepository
 
 class MemberListViewModel(parliamentData: ParliamentData, application: Application) :
     AndroidViewModel(application) {
+
     // LiveData for navigation
     private val _navigateToSelectedMember = MutableLiveData<ParliamentData?>()
     val navigateToSelectedMember: LiveData<ParliamentData?>
         get() = _navigateToSelectedMember
-
 
     // Getting members from repository and filtering to distinct members
     private val members = MemberRepository.memberData
     val member = Transformations.map(members) {
         members.value?.filter { it.party == parliamentData.party }
     }
-
 
     // When specific item is clicked, set the _navigateToSelectedProperty [MutableLiveData] to
     // parliamentData that was clicked on and show member details

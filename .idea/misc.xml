@@ -28,8 +28,10 @@
         <entry key="app/src/main/res/drawable/button_checked_state.xml" value="0.24814814814814815" />
         <entry key="app/src/main/res/drawable/button_checked_state_small.xml" value="0.2351851851851852" />
         <entry key="app/src/main/res/drawable/heart_button_animator.xml" value="0.24814814814814815" />
+        <entry key="app/src/main/res/drawable/ic_back.xml" value="0.24871794871794872" />
         <entry key="app/src/main/res/drawable/ic_back_background.xml" value="0.2351851851851852" />
         <entry key="app/src/main/res/drawable/ic_back_foreground.xml" value="0.2351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_comment.xml" value="0.24871794871794872" />
         <entry key="app/src/main/res/drawable/ic_comment_foreground.xml" value="0.24871794871794872" />
         <entry key="app/src/main/res/drawable/ic_heart_background.xml" value="0.24814814814814815" />
         <entry key="app/src/main/res/drawable/ic_heart_enabled_foreground.xml" value="0.24814814814814815" />
@@ -37,6 +39,7 @@
         <entry key="app/src/main/res/drawable/ic_heart_foreground.xml" value="0.24814814814814815" />
         <entry key="app/src/main/res/drawable/ic_heart_pressed_foreground.xml" value="0.24814814814814815" />
         <entry key="app/src/main/res/drawable/ic_heart_pressed_foreground_small.xml" value="0.2351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_members.xml" value="0.24871794871794872" />
         <entry key="app/src/main/res/drawable/item_selector.xml" value="0.2351851851851852" />
         <entry key="app/src/main/res/drawable/round_corners.xml" value="0.2351851851851852" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />

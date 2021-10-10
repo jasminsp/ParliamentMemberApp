@@ -12,7 +12,7 @@ import com.jasminsp.parliamentmemberapp.MyApp
 // Class Description: VoteDatabase
 
 //Creating the database
-@Database(entities = [VoteData::class], version = 1, exportSchema = false)
+@Database(entities = [VoteData::class], version = 2, exportSchema = false)
 abstract class VoteDatabase : RoomDatabase() {
     abstract val voteDatabaseDao: VoteDatabaseDao
 

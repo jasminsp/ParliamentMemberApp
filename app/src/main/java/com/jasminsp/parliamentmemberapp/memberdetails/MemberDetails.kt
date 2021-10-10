@@ -27,9 +27,7 @@ class MemberDetails : Fragment() {
     private lateinit var viewModel: MemberDetailsViewModel
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         val application = requireNotNull(activity).application
         val parliamentData = MemberDetailsArgs.fromBundle(requireArguments()).selectedMember
