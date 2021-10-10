@@ -17,6 +17,9 @@ import com.jasminsp.parliamentmemberapp.partylist.PartyList
 
 class MainActivity : AppCompatActivity() {
 
+    // MainActivity only responsible for setting the content view that contains the
+    // Navigation host. It is the base of all the Fragments. Also holds the bottom navigation bar and
+    // its functionality
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +27,15 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
+        // Setting up the bottom navigation bar onClickListener
         bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.back -> {
                     super.onBackPressed()
+                    true
+                }
+                R.id.parties -> {
+                    findNavController(R.id.myNavHostFragment).navigate(R.id.partyList)
                     true
                 }
                 else -> {

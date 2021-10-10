@@ -17,8 +17,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-// TODO possibly add some error handling here for recyclerview. Use android kotlin fundamentals: Loading and displaying images
-// TODO start using viewmodelscope.launch to properly initialize the viewmodel
 
 class MemberDetailsViewModel(parliamentData: ParliamentData, application: Application) :
     AndroidViewModel(application) {
@@ -31,23 +29,28 @@ class MemberDetailsViewModel(parliamentData: ParliamentData, application: Applic
     private val members = MemberRepository.memberData
     val member = members.value?.find { it.personNumber == parliamentData.personNumber }
 
-
-    // getting the vote data from the database
-    var voteValues = 0
-    private var buttonState: Boolean = false
+    // Getting the voteData from the database
     private val votes = voteRepository.voteData
     val memberVote = Transformations.map(votes) { it ->
-        it.find { it.personNumber == parliamentData.personNumber }
-    }
+        it.find { it.personNumber == parliamentData.personNumber } }
+
+
+    // getting the likeValue (0 or 1) from the database
+    var voteValues = 0
+    private var buttonState: Boolean = false
+    private val likeValue = votes.value?.find { it.personNumber == parliamentData.personNumber}?.voteValue
+
+
+    var fullName: String = "${member?.first} ${member?.last}"
+
 
     init {
-        buttonCheckedState()
+        heartCheckedState()
     }
 
-    // Getting the likeValue from the database and
-    // Converting the button state from database 1 and 0 to true or false
-    private val likeValue = votes.value?.find { it.personNumber == parliamentData.personNumber}?.voteValue
-    fun buttonCheckedState(): Boolean {
+
+    // Concerting the button state from database 1 and 0 to true or false
+    fun heartCheckedState(): Boolean {
         when (likeValue) {
             1 -> buttonState = true
             0 -> buttonState =false
@@ -56,22 +59,28 @@ class MemberDetailsViewModel(parliamentData: ParliamentData, application: Applic
         return buttonState
     }
 
-    var fullName: String = "${member?.first} ${member?.last}"
 
-
+    // Formatting date for commentList
     fun formatDate(): String {
         val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss ", Locale.getDefault())
         return sdf.format(Date())
     }
 
 
-    // Transferring vote data to the database
-    fun memberLiked(vote: VoteData) {
-        viewModelScope.launch(Dispatchers.IO) {
-            voteRepository.addVote(vote)
+    // Adding votes to the database
+    fun addVotes(vote: VoteData){
+        viewModelScope.launch {
+            try {
+                voteRepository.addVote(vote)
+            } catch (networkError: IOException) {
+                Toast.makeText(
+                    MyApp.appContext, "$networkError",
+                    Toast.LENGTH_LONG).show()
+            }
         }
     }
 
+    // Adding comment to the database
     fun addComment(comment: CommentData){
         viewModelScope.launch {
             try {

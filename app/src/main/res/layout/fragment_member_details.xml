@@ -73,7 +73,7 @@
             android:hint="@string/write_a_comment"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.564"
+            app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkbox_heart"
             tools:ignore="TextContrastCheck" />
@@ -83,10 +83,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="3dp"
             android:backgroundTint="@color/teal_700"
             android:text="@string/save"
             android:textColor="#000000"
             app:layout_constraintBaseline_toBaselineOf="@+id/btn_view_comments"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btn_view_comments"
             tools:ignore="TextContrastCheck" />
 
@@ -94,12 +96,14 @@
             android:id="@+id/btn_view_comments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="8dp"
             android:backgroundTint="@color/pink_300"
             android:text="@string/comments"
             android:textColor="#000000"
-            app:layout_constraintStart_toStartOf="@+id/txt_comments"
+            app:layout_constraintEnd_toStartOf="@+id/btn_save_comments"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_comments" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

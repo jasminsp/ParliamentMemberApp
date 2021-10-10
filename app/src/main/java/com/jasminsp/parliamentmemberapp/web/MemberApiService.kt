@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 
-
+// Start of API
 private const val BASE_URL = "https://users.metropolia.fi/~peterh/"
 
 // create an instance of Moshi
@@ -29,7 +29,7 @@ private val retrofit = Retrofit.Builder()
         suspend fun getMemberRecords(): List<ParliamentData>
     }
 
-//Initializing the Api service
+//Initializing the Api service lazily
 object MemberApi {
     val retrofitService: MemberApiService by lazy {
         retrofit.create(MemberApiService::class.java)

@@ -9,6 +9,7 @@ import com.jasminsp.parliamentmemberapp.web.MemberApi
 
 
 object MemberRepository {
+    // Getting memberData from the database
     private val memberDao = ParliamentDatabase.getInstance(MyApp.appContext).parliamentDatabaseDao
     val memberData: LiveData<List<ParliamentData>> = memberDao.getAllMembers()
 

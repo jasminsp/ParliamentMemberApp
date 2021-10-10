@@ -26,13 +26,13 @@ data class ParliamentData(
 
 
 //Defining functions that can be used with the database
-    @Dao
-    interface ParliamentDatabaseDao {
-        //Checking database for conflict, replacing data if any
-        @Insert(onConflict = OnConflictStrategy.REPLACE)
-        suspend fun insertOrUpdate(parliament: ParliamentData)
+@Dao
+interface ParliamentDatabaseDao {
+    //Checking database for conflict, replacing data if any
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertOrUpdate(parliament: ParliamentData)
 
-        //Get all members as livedata from the member_database
-        @Query("SELECT * FROM member_database ORDER BY personNumber")
-        fun getAllMembers(): LiveData<List<ParliamentData>>
-    }
+    //Get all members as livedata from the member_database
+    @Query("SELECT * FROM member_database ORDER BY personNumber")
+    fun getAllMembers(): LiveData<List<ParliamentData>>
+}

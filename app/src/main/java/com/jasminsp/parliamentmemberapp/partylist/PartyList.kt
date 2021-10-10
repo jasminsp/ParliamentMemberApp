@@ -23,8 +23,7 @@ class PartyList : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        savedInstanceState: Bundle?): View {
 
         // Initializing the variables
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_party_list, container, false)
@@ -39,16 +38,21 @@ class PartyList : Fragment() {
         binding.partyGridView.adapter = partyAdapter
         binding.partyGridView.layoutManager = GridLayoutManager(MyApp.appContext, 2)
 
+
+        // Observing livedata for parties and adding them in a list
         viewModel.parties.observe(viewLifecycleOwner, {
             partyAdapter.submitList(it)
         })
 
+
+        // Navigation to next fragment with chosen member's details
         viewModel.navigateToSelectedItem.observe(viewLifecycleOwner, {
-            if ( null != it ) {
+            if (null != it) {
                 this.findNavController().navigate(
-                    PartyListDirections.actionShowMemberList(it))
+                    PartyListDirections.actionShowMemberList(it)
+                )
                 viewModel.displayPropertyDetailsComplete()
-        }
+            }
         })
 
         return binding.root

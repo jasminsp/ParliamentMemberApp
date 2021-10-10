@@ -22,7 +22,6 @@ class PartyListAdapter(private val whileClicked: OnClickListener) :
         return PartyViewHolder(binding)
     }
 
-
     override fun onBindViewHolder(holder: PartyViewHolder, position: Int) {
         val partyData = getItem(position)
 
@@ -38,7 +37,8 @@ class PartyListAdapter(private val whileClicked: OnClickListener) :
                 "ps" -> R.drawable.ic_perus
                 "r" -> R.drawable.ic_r
                 else -> R.drawable.ic_liike
-            })
+            }
+        )
 
         // Making logos clickable
         holder.itemView.setOnClickListener {
@@ -57,13 +57,13 @@ class PartyListAdapter(private val whileClicked: OnClickListener) :
         override fun areItemsTheSame(oldItem: ParliamentData, newItem: ParliamentData): Boolean {
             return oldItem == newItem
         }
+
         override fun areContentsTheSame(oldItem: ParliamentData, newItem: ParliamentData): Boolean {
             return oldItem.personNumber == newItem.personNumber
         }
     }
 
-
-    class OnClickListener(val clickListener: (parliamentParty:ParliamentData) -> Unit) {
-        fun onClick(parliamentParty:ParliamentData) = clickListener(parliamentParty)
+    class OnClickListener(val clickListener: (parliamentParty: ParliamentData) -> Unit) {
+        fun onClick(parliamentParty: ParliamentData) = clickListener(parliamentParty)
     }
 }

@@ -11,11 +11,10 @@ import com.jasminsp.parliamentmemberapp.databinding.CommentViewItemBinding
 import com.jasminsp.parliamentmemberapp.repository.CommentRepository
 
 
-
 class CommentListAdapter :
     ListAdapter<CommentData, CommentListAdapter.CommentListViewHolder>(CommentDiffCallback) {
 
-    // Getting comments from the database
+    // Getting commentData from the repository
     private val commentRepository = CommentRepository
     val comments = commentRepository.commentData
 
@@ -25,10 +24,9 @@ class CommentListAdapter :
         return CommentListViewHolder(binding)
     }
 
-
+    // Setting the updated comment and date text with holder
     override fun onBindViewHolder(holder: CommentListViewHolder, position: Int) {
         val commentData = getItem(position)
-
         holder.binding.txtCommentDate.text = commentData.date
         holder.binding.txtUserComment.text = commentData.comment
     }

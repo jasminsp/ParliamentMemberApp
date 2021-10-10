@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 // Contexts for the application
-
 class MyApp : Application() {
     private val appScope = CoroutineScope(Dispatchers.Default)
     companion object {

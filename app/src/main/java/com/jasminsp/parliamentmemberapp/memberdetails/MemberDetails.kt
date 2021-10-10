@@ -17,7 +17,6 @@ import com.jasminsp.parliamentmemberapp.database.VoteData
 import com.jasminsp.parliamentmemberapp.databinding.FragmentMemberDetailsBinding
 
 
-
 class MemberDetails : Fragment() {
 
     private lateinit var binding: FragmentMemberDetailsBinding
@@ -36,44 +35,59 @@ class MemberDetails : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_member_details, container, false)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MemberDetailsViewModel::class.java)
 
-
+        // Sets info for name and image
         bindImage(binding.imgMember, "https://avoindata.eduskunta.fi/${viewModel.member?.picture}")
         binding.txtMember.text = viewModel.fullName
 
-        binding.checkboxHeart.isChecked = viewModel.buttonCheckedState()
+        // Checking heartButton value when taking from database and before saving to database
+        binding.checkboxHeart.isChecked = viewModel.heartCheckedState()
         binding.checkboxHeart.setOnClickListener {
-            if (binding.checkboxHeart.isChecked) viewModel.voteValues = 1 else viewModel.voteValues = 0
-            sendVotesToDatabase()
+            if (binding.checkboxHeart.isChecked)
+                viewModel.voteValues = 1 else viewModel.voteValues = 0
+            addVotes()
         }
 
-        binding.btnSaveComments.setOnClickListener {addComment()}
-        binding.btnViewComments.setOnClickListener {checkComments()}
+        binding.btnSaveComments.setOnClickListener { addComment() }
+        binding.btnViewComments.setOnClickListener { showComments() }
 
+        // Observes votes from repository
         viewModel.memberVote.observe(viewLifecycleOwner, {
             binding.checkboxHeart.isChecked
         })
 
-
         return binding.root
     }
 
-    // Sending votes to the database
-    private fun sendVotesToDatabase() {
-        val personNumber = viewModel.member?.personNumber ?: 0
-        val vote = viewModel.voteValues
-
-        val voteEntry = VoteData(personNumber, vote)
-        viewModel.memberLiked(voteEntry)
+    // Adding votes to the database
+    private fun addVotes() {
+        viewModel.member?.let {
+            viewModel.addVotes(
+                VoteData(
+                    it.personNumber,
+                    viewModel.voteValues
+                )
+            )
+        }
     }
 
+    // Adding comments to the database
     private fun addComment() {
-        viewModel.member?.let { viewModel.addComment(CommentData(viewModel.formatDate(), it.personNumber, binding.txtComments.text.toString())) }
+        viewModel.member?.let {
+            viewModel.addComment(
+                CommentData(
+                    viewModel.formatDate(),
+                    it.personNumber,
+                    binding.txtComments.text.toString()
+                )
+            )
+        }
         binding.txtComments.text?.clear()
         Toast.makeText(MyApp.appContext, "Saved", Toast.LENGTH_SHORT).show()
     }
 
 
-    private fun checkComments(){
+    // Navigate to commentList Fragment with member specific comments
+    private fun showComments() {
         viewModel.member?.let {
             this.findNavController().navigate(MemberDetailsDirections.toCommentList(it))
         }

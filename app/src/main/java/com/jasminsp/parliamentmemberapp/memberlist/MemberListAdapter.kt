@@ -23,8 +23,7 @@ class MemberListAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemberListViewHolder {
-        val binding =
-            MemberViewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = MemberViewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MemberListViewHolder(binding)
     }
 

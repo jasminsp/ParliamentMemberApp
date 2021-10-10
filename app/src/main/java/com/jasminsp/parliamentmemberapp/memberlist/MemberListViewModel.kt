@@ -8,7 +8,7 @@ import com.jasminsp.parliamentmemberapp.repository.MemberRepository
 
 class MemberListViewModel(parliamentData: ParliamentData, application: Application) :
     AndroidViewModel(application) {
-    // Creates navigation
+    // LiveData for navigation
     private val _navigateToSelectedMember = MutableLiveData<ParliamentData?>()
     val navigateToSelectedMember: LiveData<ParliamentData?>
         get() = _navigateToSelectedMember
@@ -21,7 +21,8 @@ class MemberListViewModel(parliamentData: ParliamentData, application: Applicati
     }
 
 
-    // Showing the member details
+    // When specific item is clicked, set the _navigateToSelectedProperty [MutableLiveData] to
+    // parliamentData that was clicked on and show member details
     fun memberDetails(parliamentData: ParliamentData) {
         _navigateToSelectedMember.value = parliamentData
     }

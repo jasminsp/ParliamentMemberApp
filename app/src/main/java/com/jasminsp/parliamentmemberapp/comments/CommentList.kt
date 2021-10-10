@@ -23,10 +23,10 @@ class CommentList : Fragment() {
 
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         val application = requireNotNull(activity).application
         val parliamentData = CommentListArgs.fromBundle(requireArguments()).savedComments
         val viewModelFactory = CommentViewModelFactory(parliamentData, application)
@@ -36,20 +36,19 @@ class CommentList : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(CommentViewModel::class.java)
         commentAdapter = CommentListAdapter()
 
-
         binding.commentList.adapter = commentAdapter
         binding.commentList.layoutManager = LinearLayoutManager(MyApp.appContext)
-
 
         viewModel.comment.observe(viewLifecycleOwner, {
             commentAdapter.submitList(it)
         })
 
-
-        binding.commentList.addItemDecoration(DividerItemDecoration(MyApp.appContext, DividerItemDecoration.VERTICAL))
-
-
-
+        binding.commentList.addItemDecoration(
+            DividerItemDecoration(
+                MyApp.appContext,
+                DividerItemDecoration.VERTICAL
+            )
+        )
 
         return binding.root
     }

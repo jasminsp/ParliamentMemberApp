@@ -44,15 +44,21 @@ class MemberList : Fragment() {
             memberAdapter.submitList(it)
         })
 
-        binding.memberListView.addItemDecoration(DividerItemDecoration(MyApp.appContext, DividerItemDecoration.VERTICAL))
+        // Adding vertical divider between the itemViews
+        binding.memberListView.addItemDecoration(
+            DividerItemDecoration(
+                MyApp.appContext,
+                DividerItemDecoration.VERTICAL
+            )
+        )
 
-
-
+        // Observe the navigateToSelectedProperty LiveData and Navigate when it isn't null
         viewModel.navigateToSelectedMember.observe(viewLifecycleOwner, {
             if (null != it) {
                 this.findNavController().navigate(
                     MemberListDirections.actionShowMemberDetails(it)
                 )
+                // Navigation state complete to avoid duplicate navigation
                 viewModel.displayPropertyDetailsComplete()
             }
         })

@@ -17,6 +17,8 @@ class CommentViewModel(parliamentData: ParliamentData, application: Application)
     // Getting comments for matching personNumbers from repository
     private val commentRepository = CommentRepository
     private val comments = commentRepository.commentData
+
+    // We get comments filtered by specific member
     val comment = Transformations.map(comments) {
         comments.value?.filter { it.personNumber == parliamentData.personNumber }
     }

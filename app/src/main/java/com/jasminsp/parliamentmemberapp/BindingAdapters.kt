@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 
-// Transforming the URL to Uri with Glide so that images can be shown on the app
+// Uses the Glide library to load an image by URL into an ImageView
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
     imgUrl?.let {
