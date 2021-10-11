@@ -33,17 +33,14 @@ class MemberList : Fragment() {
         val parliamentData = MemberListArgs.fromBundle(requireArguments()).selectedParty
         val viewModelFactory = MemberListViewModelFactory(parliamentData, application)
 
-
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_member_list, container, false)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MemberListViewModel::class.java)
         memberAdapter = MemberListAdapter(this, MemberListAdapter.OnClickListener {
             viewModel.memberDetails(it)
         })
 
-
         binding.memberListView.adapter = memberAdapter
         binding.memberListView.layoutManager = LinearLayoutManager(MyApp.appContext)
-
 
         viewModel.member.observe(viewLifecycleOwner, {
             memberAdapter.submitList(it)

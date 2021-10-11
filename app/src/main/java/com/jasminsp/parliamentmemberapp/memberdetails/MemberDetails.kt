@@ -40,6 +40,7 @@ class MemberDetails : Fragment() {
         // Sets info for name and image
         bindImage(binding.imgMember, "https://avoindata.eduskunta.fi/${viewModel.member?.picture}")
         binding.txtMember.text = viewModel.fullName
+        binding.txtConstituency.text = viewModel.constituency
 
         // Checking heartButton value when taking from database and before saving to database
         binding.checkboxHeart.isChecked = viewModel.heartCheckedState()

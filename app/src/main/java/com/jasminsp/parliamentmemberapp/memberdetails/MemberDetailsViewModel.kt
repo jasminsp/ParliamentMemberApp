@@ -45,6 +45,7 @@ class MemberDetailsViewModel(parliamentData: ParliamentData, application: Applic
 
 
     var fullName: String = "${member?.first} ${member?.last}"
+    var constituency: String = "${member?.constituency}"
 
 
     init {
