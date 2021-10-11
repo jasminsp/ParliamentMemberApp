@@ -65,7 +65,7 @@ class MemberDetailsViewModel(parliamentData: ParliamentData, application: Applic
 
     // Formatting date for commentList
     fun formatDate(): String {
-        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss ", Locale.getDefault())
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm aa ", Locale.getDefault())
         return sdf.format(Date())
     }
 
