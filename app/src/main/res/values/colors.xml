@@ -4,13 +4,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="teal_50">#72009688</color>
     <color name="pink_300">#FFDBD8</color>
     <color name="purple_200">#FFDB34</color>
     <color name="purple_700">#552111</color>
 
-
-    <color name="statePressed">#BF1B3D</color>
-    <color name="stateEnabled">#474747</color>
     <color name="stateNotEnabled">#B6B6B6</color>
 </resources>

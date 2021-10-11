@@ -30,15 +30,15 @@ class PartyListAdapter(private val whileClicked: OnClickListener) :
         // Using PartyViewHolder to set a right logo for specific party
         holder.binding.image.setImageResource(
             when (partyData.party) {
-                "sd" -> R.drawable.ic_sdp
-                "vihr" -> R.drawable.ic_vihreat
-                "kesk" -> R.drawable.ic_keskusta
-                "vas" -> R.drawable.ic_vasemmisto
-                "kd" -> R.drawable.ic_kristillis
-                "kok" -> R.drawable.ic_kokoomus
-                "ps" -> R.drawable.ic_perus
-                "r" -> R.drawable.ic_r
-                else -> R.drawable.ic_liike
+                "sd" -> R.mipmap.ic_sdp
+                "vihr" -> R.mipmap.ic_vihreat
+                "kesk" -> R.mipmap.ic_keskusta
+                "vas" -> R.mipmap.ic_vasemmisto
+                "kd" -> R.mipmap.ic_kristillis
+                "kok" -> R.mipmap.ic_kokoomus
+                "ps" -> R.mipmap.ic_perus
+                "r" -> R.mipmap.ic_r
+                else -> R.mipmap.ic_liike
             }
         )
 
