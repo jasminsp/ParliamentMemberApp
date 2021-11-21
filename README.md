@@ -34,4 +34,4 @@ Other features used in the app:
 - ViewModel for all fragments
 
 
-# **Demo of the application**
+# **Fragments in the application**
