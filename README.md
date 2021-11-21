@@ -30,5 +30,5 @@ List of Comments
 Other features used in the app: 
 - Room database/dao for comments, votes and parliament member data
 - LiveData to observe live updates
-- VMMV framework with repository and API service for fetching member information from API.
+- VMMV framework with repository and API service for fetching member information from API: Retrofit and Moshi.
 - ViewModel for all fragments
