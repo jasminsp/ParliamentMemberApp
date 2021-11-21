@@ -4,7 +4,7 @@ of different parliament parties and parliament members in Finland.
 
 User can browse through the application starting by choosing the party. They will then see members of that specific party, 
 which after they can choose specific member. Once they choose a member, they will see detailed information of that member, like the 
-member, give a comment and view comments. Once they are done, they can use the bottomnavigation bar to return to the party listing.
+member, give a comment and view comments. Once they are done, they can use the bottom navigation bar to return to the party listing.
 
 MainActivity
 - Navigation component
