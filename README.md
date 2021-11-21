@@ -32,3 +32,6 @@ Other features used in the app:
 - LiveData to observe live updates
 - VMMV framework with repository and API service for fetching member information from API: Retrofit and Moshi.
 - ViewModel for all fragments
+
+
+# **Demo of the application**
