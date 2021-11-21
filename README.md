@@ -35,3 +35,11 @@ Other features used in the app:
 
 
 # **Fragments in the application**
+List of different parties in Finland
+<img width="415" alt="ParliamentApp_view1" src="https://user-images.githubusercontent.com/74709722/142756689-b7e8cc8b-826e-4c3c-b3ae-18b169b6c9d8.png">
+List of the party members
+<img width="420" alt="ParliamentApp_view2" src="https://user-images.githubusercontent.com/74709722/142756698-6bd52a00-2283-45ee-b820-50ebbeb2099c.png">
+Party member view
+<img width="422" alt="ParliamentApp_view3" src="https://user-images.githubusercontent.com/74709722/142756702-c6cf4ecb-45fe-4ed9-bff1-988e425a1e60.png">
+Comments of a specific party member
+<img width="423" alt="ParliamentApp_view4" src="https://user-images.githubusercontent.com/74709722/142756706-50d23d17-5dd2-44ad-ae02-be3e13bab7f3.png">
